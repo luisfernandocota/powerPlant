@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+html5lib = "==1.1"
+ipaddress = "==1.0.18"
+mysqlclient = "==2.1.0"
+python-decouple = "==3.0"
+requests = "==2.27.1"
+rjsmin = "==1.0.12"
+six = "==1.10.0"
+Django = "==2.2.4"
+Pillow = "==9.0.1"
+django-extensions = "==1.7.5"
+dj-database-url = "==0.5.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
