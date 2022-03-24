@@ -10,7 +10,8 @@ class DeviceAdmin(admin.ModelAdmin):
         try:
             device = Device.objects.get(pk=obj.pk)
             if change:
-
+                if obj.has_maintenance == False:
+                    Reading.objects.create(device=device, typeDevice=device.typeDevice,currentPower=form.cleaned_data['currentPower'])
                 if str(form.cleaned_data['statusDevice']).startswith('En man') and obj.has_maintenance == False:
                     obj.has_maintenance = True
 
@@ -18,7 +19,7 @@ class DeviceAdmin(admin.ModelAdmin):
                 if str(form.cleaned_data['statusDevice']).startswith('En oper') and obj.has_maintenance == True:
                     obj.has_maintenance = False
 
-                Reading.objects.create(device=device, typeDevice=device.typeDevice,currentPower=form.cleaned_data['currentPower'])
+                
         except ObjectDoesNotExist:
             pass
         super().save_model(request, obj, form, change)
