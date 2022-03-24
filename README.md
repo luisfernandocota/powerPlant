@@ -6,7 +6,7 @@ This project consists of a test to apply for a job.
 ## Deploy
 This project is deployed on a server under the following IP
 ```sh
-164.92.78.73:8080
+164.92.78.37:8080
 ```
 
 ## Access to app
