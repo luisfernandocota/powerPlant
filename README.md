@@ -15,7 +15,7 @@ The APIs contained in this project are the following
 | API | PARAMS | URL |
 | ------ | ------ | ------ |
 | Get devices list | Params (name,type, status) | /api/devices/?parm=value |
-| Get device | id_device  | /api/devices/{pk} |
+| Get device | id_device  | /api/device/{pk} |
 | Get readings| Params(total=id_device)  | /api/readings/?total=pk |
 | Get reading by device | id_device | /api/readings/device/{pk} |
 | Get reading by type of device | id_type_device| /api/readings/device/type/{pk} |
