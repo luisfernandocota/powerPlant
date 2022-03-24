@@ -28,7 +28,7 @@ class Device(TimeStampedModel):
     currentPower = models.SmallIntegerField(verbose_name='Current power')
     typeDevice = models.ForeignKey(TypeDevice, related_name='device_typeDevice', on_delete=models.CASCADE)
     statusDevice = models.ForeignKey(StatusDevice, related_name='device_statusDevice', on_delete=models.CASCADE)
-
+    has_maintenance = models.BooleanField(verbose_name='has_maintenance',default=False)
     class Meta:
         db_table = 'devices'
         verbose_name = 'Device'
@@ -36,3 +36,11 @@ class Device(TimeStampedModel):
 
     def __str__(self):
         return '%s - %s (KWh)' % (self.nameDevice, self.currentPower)
+
+
+class Maintenance(TimeStampedModel):
+    device = models.ForeignKey(Device, related_name='maintenance_device', on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'maintenances'
+        verbose_name_plural = 'maintenances'

@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.conf import settings
 
 from django.forms.models import model_to_dict
-from panel.device.models import Device
+from panel.device.models import Device, Maintenance
 from panel.readings.models import Reading
 from panel.core.utils import filters_by_request
 # Create your views here.
@@ -62,3 +62,9 @@ class ReadingsTypeDeviceViews(View):
         return JsonResponse(list(readings.values()),safe=False)
 
         
+
+class MaintenanceViews(View):
+    def get(self, request, pk):
+        maintenances = Maintenance.objects.filter(device__pk=pk)
+
+        return JsonResponse(list(maintenances.values()), safe=False)
