@@ -24,3 +24,5 @@ The APIs contained in this project are the following
 | Get readings| Params(total=id_device)  | /api/readings/?total=pk |
 | Get reading by device | id_device | /api/readings/device/{pk} |
 | Get reading by type of device | id_type_device| /api/readings/device/type/{pk} |
+| Get maintenances by device | id_device| /api/maintenances/device/{pk} |
+
